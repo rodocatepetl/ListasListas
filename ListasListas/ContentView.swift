@@ -21,19 +21,63 @@ struct IntroListView: View {
 
 // Diapositiva 2: Ejemplo de Lista Básica
 struct BasicListView: View {
+    
+    var examples: [String] = [
+        "Aira",
+        "Aimee",
+        "Lluis"
+    ]
+    
+    var body: some View {
+        VStack {
+            Text("Ejemplo de Lista Básica")
+                .font(.title)
+            getList()
+        }
+    }
+    
+    func getList() -> some View {
+        List(examples, id: \.self) { example in
+            Text(example)
+        }
+    }
+}
+
+struct HorizontalBasicListView: View {
+    
+    var examples: [String] = [
+        "Ejemplo 1",
+        "Ejemplo 2",
+        "Ejemplo 3"
+    ]
+    
     var body: some View {
         VStack {
             Text("Ejemplo de Lista Básica")
                 .font(.title)
             
-            List {
-                Text("Elemento 1")
-                Text("Elemento 2")
-                Text("Elemento 3")
+            horizontalExamplesList() // Llama a la función que devuelve la lista horizontal
+        }
+    }
+
+    // Función que crea y devuelve la vista de la lista en horizontal
+    func horizontalExamplesList() -> some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 20) {
+                ForEach(examples, id: \.self) { example in
+                    Text(example)
+                        .padding()
+                        .frame(minWidth: 100)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
             }
+            .padding()
         }
     }
 }
+
 
 // Diapositiva 3: Por qué son importantes las Listas
 struct ImportanceListView: View {
@@ -77,6 +121,11 @@ struct PresentationView: View {
             BasicListView()
                 .tabItem {
                     Label("Básico", systemImage: "list.bullet.rectangle")
+                }
+            
+            HorizontalBasicListView()
+                .tabItem {
+                    Label("Horizontal", systemImage: "list.bullet.rectangle")
                 }
             
             ImportanceListView()
