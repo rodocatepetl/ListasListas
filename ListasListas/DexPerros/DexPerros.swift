@@ -21,6 +21,7 @@ struct Perro: Hashable {
         hasher.combine(name)
         hasher.combine(owner)
         hasher.combine(age)
+        
     }
 }
 

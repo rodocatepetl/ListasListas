@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4AC8B0E2B75F0890088E513 /* DietView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC8B0D2B75F0890088E513 /* DietView.swift */; };
+		A4AC8B102B75F1270088E513 /* DietDex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC8B0F2B75F1270088E513 /* DietDex.swift */; };
 		DD65F6B02B6C5040003562B1 /* ListasListasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65F6AF2B6C5040003562B1 /* ListasListasApp.swift */; };
 		DD65F6B22B6C5040003562B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65F6B12B6C5040003562B1 /* ContentView.swift */; };
 		DD65F6B42B6C5042003562B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD65F6B32B6C5042003562B1 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A4AC8B0D2B75F0890088E513 /* DietView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietView.swift; sourceTree = "<group>"; };
+		A4AC8B0F2B75F1270088E513 /* DietDex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDex.swift; sourceTree = "<group>"; };
 		DD65F6AC2B6C5040003562B1 /* ListasListas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListasListas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD65F6AF2B6C5040003562B1 /* ListasListasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListasListasApp.swift; sourceTree = "<group>"; };
 		DD65F6B12B6C5040003562B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4AC8B0C2B75F05E0088E513 /* Diet */ = {
+			isa = PBXGroup;
+			children = (
+				A4AC8B0D2B75F0890088E513 /* DietView.swift */,
+				A4AC8B0F2B75F1270088E513 /* DietDex.swift */,
+			);
+			path = Diet;
+			sourceTree = "<group>";
+		};
 		DD65F6A32B6C5040003562B1 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +115,7 @@
 				DD65F6B12B6C5040003562B1 /* ContentView.swift */,
 				DDFE05272B759FFC00341B7E /* DexPerros */,
 				DD65F6B32B6C5042003562B1 /* Assets.xcassets */,
+				A4AC8B0C2B75F05E0088E513 /* Diet */,
 				DD65F6B52B6C5042003562B1 /* Preview Content */,
 			);
 			path = ListasListas;
@@ -271,10 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4AC8B0E2B75F0890088E513 /* DietView.swift in Sources */,
 				DDFE05292B75A52A00341B7E /* DetallesPerro.swift in Sources */,
 				DD65F6B22B6C5040003562B1 /* ContentView.swift in Sources */,
 				DD65F6B02B6C5040003562B1 /* ListasListasApp.swift in Sources */,
 				DDFE05262B759FF500341B7E /* DexPerros.swift in Sources */,
+				A4AC8B102B75F1270088E513 /* DietDex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
