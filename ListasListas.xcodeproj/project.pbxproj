@@ -14,6 +14,8 @@
 		DD65F6C12B6C5042003562B1 /* ListasListasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65F6C02B6C5042003562B1 /* ListasListasTests.swift */; };
 		DD65F6CB2B6C5042003562B1 /* ListasListasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65F6CA2B6C5042003562B1 /* ListasListasUITests.swift */; };
 		DD65F6CD2B6C5042003562B1 /* ListasListasUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65F6CC2B6C5042003562B1 /* ListasListasUITestsLaunchTests.swift */; };
+		DDFE05262B759FF500341B7E /* DexPerros.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFE05252B759FF500341B7E /* DexPerros.swift */; };
+		DDFE05292B75A52A00341B7E /* DetallesPerro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFE05282B75A52A00341B7E /* DetallesPerro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		DD65F6C62B6C5042003562B1 /* ListasListasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListasListasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD65F6CA2B6C5042003562B1 /* ListasListasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListasListasUITests.swift; sourceTree = "<group>"; };
 		DD65F6CC2B6C5042003562B1 /* ListasListasUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListasListasUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DDFE05252B759FF500341B7E /* DexPerros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexPerros.swift; sourceTree = "<group>"; };
+		DDFE05282B75A52A00341B7E /* DetallesPerro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesPerro.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			children = (
 				DD65F6AF2B6C5040003562B1 /* ListasListasApp.swift */,
 				DD65F6B12B6C5040003562B1 /* ContentView.swift */,
+				DDFE05272B759FFC00341B7E /* DexPerros */,
 				DD65F6B32B6C5042003562B1 /* Assets.xcassets */,
 				DD65F6B52B6C5042003562B1 /* Preview Content */,
 			);
@@ -125,6 +130,15 @@
 				DD65F6CC2B6C5042003562B1 /* ListasListasUITestsLaunchTests.swift */,
 			);
 			path = ListasListasUITests;
+			sourceTree = "<group>";
+		};
+		DDFE05272B759FFC00341B7E /* DexPerros */ = {
+			isa = PBXGroup;
+			children = (
+				DDFE05252B759FF500341B7E /* DexPerros.swift */,
+				DDFE05282B75A52A00341B7E /* DetallesPerro.swift */,
+			);
+			path = DexPerros;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +271,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDFE05292B75A52A00341B7E /* DetallesPerro.swift in Sources */,
 				DD65F6B22B6C5040003562B1 /* ContentView.swift in Sources */,
 				DD65F6B02B6C5040003562B1 /* ListasListasApp.swift in Sources */,
+				DDFE05262B759FF500341B7E /* DexPerros.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
