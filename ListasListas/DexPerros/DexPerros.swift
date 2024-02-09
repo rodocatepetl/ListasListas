@@ -12,6 +12,7 @@ struct Perro: Hashable {
     let name: String
     let owner: String
     let age: Int
+    let details: String
     
     static func == (lhs: Perro, rhs: Perro) -> Bool {
         return lhs.name == rhs.name && lhs.owner == rhs.owner && lhs.age == rhs.age
@@ -21,6 +22,7 @@ struct Perro: Hashable {
         hasher.combine(name)
         hasher.combine(owner)
         hasher.combine(age)
+        
     }
 }
 
@@ -29,20 +31,20 @@ struct Perro: Hashable {
 struct AdvancedListView: View {
     
     let perrosConocidos: [Perro] = [
-        Perro(name: "Rockett", owner: "Aimee", age: 12),
-        Perro(name: "Tessa", owner: "Aira", age: 7),
-        Perro(name: "Pomela", owner: "Aimee", age: 4),
-        Perro(name: "Rogelio", owner: "Rodo", age: 8),
-        Perro(name: "Nymeria", owner: "Khan", age: 9),
-        Perro(name: "Tsume", owner: "Mauricio", age: 8),
-        Perro(name: "Gos", owner: "Hada", age: 9),
-        Perro(name: "Sasha", owner: "Hada", age: 13),
-        Perro(name: "Gordita", owner: "Lola", age: 5),
-        Perro(name: "Federica", owner: "Melany", age: 2),
-        Perro(name: "Toby", owner: "Lola", age: 3),
-        Perro(name: "Teddy", owner: "Melissa", age: 3),
-        Perro(name: "Coco", owner: "Gabriel", age: 8),
-        Perro(name: "Chento", owner: "Melissa", age: 7)
+        Perro(name: "Rockett", owner: "Aimee", age: 12, details: "Enojón, peleonero, amoroso"),
+        Perro(name: "Tessa", owner: "Aira", age: 7, details: "Loca, lobita, aulladora"),
+        Perro(name: "Pomela", owner: "Aimee", age: 4, details: "Sin ojo, miedosa, corredora veloz"),
+        Perro(name: "Rogelio", owner: "Rodo", age: 8, details: "Amoroso, llorón, vejiga pequeña"),
+        Perro(name: "Nymeria", owner: "Khan", age: 9, details: "Grande, voz ronca"),
+        Perro(name: "Tsume", owner: "Mauricio", age: 8, details: "Mamoncito, consentido"),
+        Perro(name: "Gos", owner: "Hada", age: 9, details: "Gigante, juguetón"),
+        Perro(name: "Sasha", owner: "Hada", age: 13, details: "Tuta, tranquila"),
+        Perro(name: "Gordita", owner: "Lola", age: 5, details: "Muda, tranquila, preciosa"),
+        Perro(name: "Federica", owner: "Melany", age: 2, details: "Juguetona, hiperactiva, sobreviviente"),
+        Perro(name: "Toby", owner: "Lola", age: 3, details: "Mamoncito, ladrador"),
+        Perro(name: "Teddy", owner: "Melissa", age: 3, details: "Miedoso, ladrador"),
+        Perro(name: "Coco", owner: "Gabriel", age: 8, details: "Enojón, apestoso"),
+        Perro(name: "Chento", owner: "Melissa", age: 7, details: "Peleonero, trucos de circo")
     ]
     
     var body: some View {
@@ -54,9 +56,9 @@ struct AdvancedListView: View {
                 HStack {
                     Text ("Nombre")
                         .font(.headline)
-                    Text ("Dueño")
-                        .font(.headline)
                     Text ("Edad")
+                        .font(.headline)
+                    Text ("Dueño")
                         .font(.headline)
                 }
                 
