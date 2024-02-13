@@ -79,6 +79,32 @@ struct HorizontalBasicListView: View {
 }
 
 
+struct StateAndDOMView: View {
+    let similarities = [
+        ("Representación del Estado", "Tanto @State en SwiftUI como el DOM representan el estado actual de la interfaz de usuario."),
+        ("Actualización Reactiva", "Ambos responden de manera reactiva a cambios en el estado, actualizando automáticamente la interfaz de usuario."),
+        ("Reconciliación", "Tanto SwiftUI como las bibliotecas modernas de JavaScript utilizan un proceso de reconciliación para determinar qué partes de la interfaz de usuario deben actualizarse en función de los cambios de estado."),
+        ("Inmutabilidad", "Ambos promueven el uso de datos inmutables para gestionar el estado."),
+        ("Actualización Eficiente", "Tanto SwiftUI como React emplean técnicas para realizar actualizaciones eficientes en la interfaz de usuario, minimizando la cantidad de manipulación del DOM o la representación de vistas necesaria para reflejar los cambios de estado."),
+        ("Facilidad de Desarrollo", "Ambos proporcionan una forma declarativa de definir la interfaz de usuario, lo que facilita el desarrollo y el mantenimiento del código.")
+    ]
+    
+    var body: some View {
+        NavigationView {
+            List(similarities, id: \.0) { similarity in
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(similarity.0)
+                        .font(.headline)
+                        .foregroundColor(.blue)
+                    Text(similarity.1)
+                        .font(.body)
+                }
+            }
+            .navigationTitle("Similitudes entre @State y el DOM")
+        }
+    }
+}
+
 // Diapositiva 3: Por qué son importantes las Listas
 struct ImportanceListView: View {
     var body: some View {
@@ -129,7 +155,9 @@ struct PresentationView: View {
                     Label("Perros", systemImage: "list.bullet.indent")
                 }
             
-           
+            StateAndDOMView().tabItem {
+                Label("State", systemImage: "list.bullet.star")
+            }
         }
     }
 }
