@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Perro: Hashable {
-    
     let name: String
     let owner: String
     let age: Int
@@ -22,13 +21,27 @@ struct Perro: Hashable {
         hasher.combine(name)
         hasher.combine(owner)
         hasher.combine(age)
-        
     }
 }
 
-
-
 struct AdvancedListView: View {
+    
+    /// `@State` es un tipo de propiedad en SwiftUI que se utiliza para almacenar el estado de una vista.
+    /// Cuando el valor de una propiedad `@State` cambia, SwiftUI vuelve a representar la vista para reflejar ese cambio.
+    ///
+    /// Aquí hay algunas características clave de `@State`:
+    ///
+    /// 1. **Almacenamiento de estado:** `@State` se utiliza para almacenar valores que afectan la apariencia o el comportamiento de una vista.
+    /// 2. **Propiedad envuelta:** `@State` es una propiedad envuelta que debe ser declarada con el prefijo `@State`.
+    /// 3. **Modificación con Binding:** `@State` proporciona un `Binding` a su valor, lo que permite que la vista que lo utiliza modifique su estado.
+    /// Esto significa que puede actualizar el valor de `@State` desde dentro de la vista.
+    /// 4. **Reactividad automática:** Cuando el valor de una propiedad `@State` cambia, SwiftUI vuelve a representar automáticamente la vista que contiene esa propiedad para reflejar el cambio.
+    ///
+    /// En el ejemplo anterior, `@State` se utiliza para almacenar el texto ingresado en el campo de búsqueda (`searchText`).
+    /// Cuando el usuario ingresa texto en el campo de búsqueda, el valor de `searchText` cambia y la vista se vuelve a representar automáticamente
+    /// para filtrar la lista de perros por el nombre del dueño.
+
+    @State private var searchText = ""
     
     let perrosConocidos: [Perro] = [
         Perro(name: "Rockett", owner: "Aimee", age: 12, details: "Enojón, peleonero, amoroso"),
@@ -62,17 +75,20 @@ struct AdvancedListView: View {
                         .font(.headline)
                 }
                 
-                getList()
-                // Aquí puedes mostrar un ejemplo más avanzado, como una lista con elementos personalizados,
-                // interacción con los datos, etc. Asegúrate de que sea un ejemplo que se pueda probar en un Playground.
+                SearchBar(text: $searchText)
                 
-                // Ejemplo de lista con datos dinámicos y vistas personalizadas
+                getList()
             }
+            .padding()
         }
     }
     
     func getList() -> some View {
-        List(self.perrosConocidos, id: \.self) { dog in
+        let filteredPerros = perrosConocidos.filter {
+            searchText.isEmpty || $0.owner.localizedCaseInsensitiveContains(searchText)
+        }
+        
+        return List(filteredPerros, id: \.self) { dog in
             HStack {
                 NavigationLink {
                     let controller = DogController(dog: dog)
@@ -91,3 +107,19 @@ struct AdvancedListView: View {
         }
     }
 }
+
+struct SearchBar: View {
+    @Binding var text: String
+    
+    var body: some View {
+        HStack {
+            TextField("Buscar dueño", text: $text)
+                .padding(8)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+                .padding(.horizontal, 15)
+        }
+        .padding(.top, 8)
+    }
+}
+
