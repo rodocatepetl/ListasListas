@@ -43,6 +43,8 @@ struct BasicListView: View {
     }
 }
 
+// Diapositiva 3. Horizontal
+
 struct HorizontalBasicListView: View {
     
     var examples: [String] = [
@@ -78,7 +80,6 @@ struct HorizontalBasicListView: View {
     }
 }
 
-
 struct StateAndDOMView: View {
     let similarities = [
         ("Representación del Estado", "Tanto @State en SwiftUI como el DOM representan el estado actual de la interfaz de usuario."),
@@ -105,7 +106,6 @@ struct StateAndDOMView: View {
     }
 }
 
-// Diapositiva 3: Por qué son importantes las Listas
 struct ImportanceListView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -120,11 +120,7 @@ struct ImportanceListView: View {
     }
 }
 
-// Diapositiva 4: Ejemplo Avanzado con Playgrounds y Previews
-
-
-
-
+// Diapositiva 5: Perros
 
 // Vista contenedora para navegar entre diapositivas
 struct PresentationView: View {
@@ -155,29 +151,18 @@ struct PresentationView: View {
                     Label("Perros", systemImage: "list.bullet.indent")
                 }
             
-            StateAndDOMView().tabItem {
-                Label("State", systemImage: "list.bullet.star")
-            }
+            StateAndDOMView()
+                .tabItem {
+                    Label("State", systemImage: "list.bullet.star")
+                }
+            
+            DietPreView()
+                .tabItem {
+                    Label("Dieta", systemImage: "fork.knife.circle.fill")
+                }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Vista previa para SwiftUI Preview
 struct PresentationView_Previews: PreviewProvider {
